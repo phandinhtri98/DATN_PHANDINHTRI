@@ -1,0 +1,62 @@
+<div class="container-fluid">
+    <div class="container-page">
+        <div class="left-wrapper" [@routerTransition]>
+            <div class="login-text">
+                <h2>Auth Server Admin Dashboard Login Page</h2>
+                <p>Login or register from here to access.</p>
+            </div>
+        </div>
+        <div class="right-wrapper">
+            <div class="login-wrapper">
+                <h3 class="">
+                    Login to continue
+                </h3>
+                <div class="form-wrapper validate-input" data-validate="Valid email is required: ex@abc.xyz">
+                    <input class="form-input" placeholder=" " type="text" autocomplete="off">
+                    <span class="form-label">Email</span>
+                </div>
+                <div class="form-wrapper validate-input" data-validate="Password is required">
+                    <input class="form-input" placeholder=" " type="password" name="pass">
+                    <span class="form-label">Password</span>
+                </div>
+                <div class="password-remember-wrapper">
+                    <div class="remember-wrapper">
+                        <input id="ckb1" type="checkbox" name="remember-me">
+                        <label for="ckb1">
+                            Remember me
+                        </label>
+                    </div>
+                    <a href="javascripe: void(0)">
+                        Forgot Password?
+                    </a>
+                </div>
+                <button nz-button
+                    (click)="createNotification('error', 'Auth Server Admin Dashboard', 'Please, login with Identity Server 4!')"
+                    class="btn-login"
+                >
+                    <span>Login</span>
+                </button>
+                <span class="txt2">
+                    or sign up using
+                </span>
+                <ul class="social-wrapper">
+                    <li>
+                        <a (click)="loginWithID4()">
+                            <img class="icon" src="./assets/images/is4-logo.png" alt="">
+                        </a>
+                    </li>
+                    <li class="social-item">
+                        <a (click)="createNotification('error', 'Facebook', 'Unregistered or unsupported applications!')">
+                            <img class="icon" src="./assets/images/facebook.svg" alt="">
+                        </a>
+                    </li>
+                    <li class="social-item">
+                        <a (click)="createNotification('error', 'Twitter', 'Unregistered or unsupported applications!')">
+                            <img class="icon" src="./assets/images/twitter.png" alt="">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

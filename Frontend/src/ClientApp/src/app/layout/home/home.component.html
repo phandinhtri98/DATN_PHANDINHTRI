@@ -1,0 +1,58 @@
+<div class="home-container">
+  <!--Header-->
+  <h1>Welcome!</h1>
+  <p>This is Single Sign-On Admin Panel. Here you can manage your SSO settings..</p>
+  <hr>
+  <div class="home-img-wrapper">
+      <a href="https://dotnet.microsoft.com" target="_blank" nz-tooltip nzTooltipTitle="ASPNETCore">
+        <img class="img-intro" src="./assets/images/netcore-logo.png" alt="">
+      </a>
+      <a href="https://angular.io" target="_blank" nz-tooltip nzTooltipTitle="Angular ">
+        <img class="img-intro img-angular" src="./assets/images/angular-logo.png" alt="">
+      </a>
+      <a href="https://identityserver4.readthedocs.io/en/latest/" target="_blank" nz-tooltip
+        nzTooltipTitle="Identity Server">
+        <img class="img-intro" src="./assets/images/is4-logo.png" alt="">
+      </a>
+  </div>
+  <a nz-button nzType="primary" href="https://github.com/phandinhtri98/DATN_PHANDINHTRI" target="_blank">Learn More</a>
+  <!--Body-->
+  <div style="background: #ECECEC;padding:30px;">
+    <div nz-row [nzGutter]="8">
+      <div nz-col [nzSpan]="8" style="text-align: center;">
+        <nz-card nzTitle="Clients">
+          <a routerLink='/clients'>Manage</a>
+        </nz-card>
+      </div>
+      <div nz-col [nzSpan]="8" style="text-align: center;">
+        <nz-card nzTitle="Api Resources">
+          <a routerLink='/api-resources'>Manage</a>
+        </nz-card>
+      </div>
+      <div nz-col [nzSpan]="8" style="text-align: center;">
+        <nz-card nzTitle="Api Scopes">
+          <a routerLink='/api-scopes'>Manage</a>
+        </nz-card>
+      </div>
+    </div>
+    <br>
+    <div nz-row [nzGutter]="8">
+      <div nz-col [nzSpan]="8" style="text-align: center;">
+        <nz-card nzTitle="Identity Resources">
+          <a routerLink='/identity-resources'>Manage</a>
+        </nz-card>
+      </div>
+      <div nz-col [nzSpan]="8" style="text-align: center;">
+        <nz-card nzTitle="Users">
+          <a routerLink='/users'>Manage</a>
+        </nz-card>
+      </div>
+      <div nz-col [nzSpan]="8" style="text-align: center;">
+        <nz-card nzTitle="Permissions">
+          <a routerLink='/permissions'>Manage</a>
+        </nz-card>
+      </div>
+    </div>
+    <br>
+  </div>
+</div>

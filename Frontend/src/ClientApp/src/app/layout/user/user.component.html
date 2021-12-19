@@ -1,0 +1,58 @@
+<!--Header-->
+<div class="content-heading">
+  <span>👨‍👩‍👧‍👦 Users</span>
+  <p> A user is a person or robot that can access resources and clients.</p>
+</div>
+<button nz-button nzType="primary" nzButtonSize="large" nzShape="round" routerLink='add'>
+  <i nz-icon nzType="plus-circle" nzTheme="fill"></i>
+  Create new user
+</button>
+<br><br>
+<div nz-row>
+  <div nz-col nzSpan="6">
+    <nz-input-group [nzSuffix]="suffixIconSearch">
+      <input placeholder="Search user with id, name,..." nz-input type="text" [(ngModel)]="searchValue"
+        (keydown.enter)="handleInputConfirm()" />
+    </nz-input-group>
+    <ng-template #suffixIconSearch>
+      <i nz-icon nzType="search"></i>
+    </ng-template>
+  </div>
+</div>
+<!--Body-->
+<nz-spin [nzSpinning]="isSpinning">
+  <nz-table #userTable [nzPageIndex]="pageIndex" nzBordered [nzScroll]="{ x: '1000px' }" [nzPageSize]="pageSize"
+    [nzData]="items" [nzTotal]="totalRecords" [nzFrontPagination]="false" (nzQueryParams)="onQueryParamsChange($event)">
+    <thead>
+      <tr>
+        <th nzWidth="45px"></th>
+        <th class="th-title">Avatar</th>
+        <th class="th-title">User Name</th>
+        <th class="th-title">Full Name</th>
+        <th class="th-title">Email</th>
+        <th class="th-title" nzWidth="20%">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of userTable.data; let i = index">
+        <td>{{ i }}</td>
+        <td>
+          <nz-avatar [nzSize]="64" [nzSrc]="user.avatarUri"></nz-avatar>
+        </td>
+        <td>{{ user.userName }}</td>
+        <td>{{ user.fullName }}</td>
+        <td>{{ user.email }}</td>
+        <td>
+          <div class="table-action">
+            <button nz-button nzType="primary" [routerLink]="[user.id,'edit']">
+               Edit<i nz-icon nzType="edit" nzTheme="fill"></i>
+            </button>
+            <button  nz-button nzType="primary" nzDanger (click)='showDeleteConfirm(user.fullName, user.id)'>
+                Delete<i nz-icon nzType="delete" nzTheme="fill"></i>
+            </button>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </nz-table>
+</nz-spin>
